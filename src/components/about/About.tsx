@@ -22,7 +22,7 @@ const About = () => {
       />
       <div className="container mx-auto max-w-5xl">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg-gap-12">
-          <div className="w-full lg:w-3/5 space-y-6 text-white">
+          <div className="w-full lg:w-3/5 space-y-6">
             <div className="space-y-2">
               <h4 className="text-primary font-mono text-lg animate-slide-up">
                 Hello, my name is
@@ -65,8 +65,8 @@ const About = () => {
           <div className="w-full lg:w-2/5 flex justify-center lg:justify-end">
             <div className="relative w-64 h-64 md:w-80 md:h-80 hidden sm:block">
               <div className="absolute inset-0 rounded-full blur-2xl animate-pulse-slow transition-all duration-1000 cyber-border bg-gradient-to-br from-pink-500/30 via-pink-500/20 to-transparent" />
-              <div className="w-80 h-80 bg-white/10 rounded-full backdrop-blur-3xl flex justify-center items-center animate-orbit">
-                <div className="w-50 h-50 bg-gradient-to-br from-pink-500/50 to-pink-600/50 text-white rounded-full flex items-center justify-center text-7xl font-bold ransform transition-transform duration-300 hover:scale-110 hover:rotate-3shadow-lg animate-pulse">
+              <div className="w-80 h-80 dark:bg-white/10 rounded-full backdrop-blur-3xl flex justify-center items-center animate-orbit">
+                <div className="w-50 h-50 bg-gradient-to-br from-pink-500/50 to-pink-600/50  rounded-full flex items-center justify-center text-7xl font-bold ransform transition-transform duration-300 hover:scale-110 hover:rotate-3shadow-lg animate-pulse">
                   MM
                 </div>
               </div>

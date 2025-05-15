@@ -1,5 +1,6 @@
 // tailwind.config.js
-export default {
+module.exports = {
+  darkMode: 'class', // This is correct
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
@@ -20,5 +21,14 @@ export default {
       orbit: 'orbit 4s linear infinite',
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addVariant, e }) {
+      // Adds a variant like .custom-dark\:bg-black
+      addVariant('custom-dark', ({ modifySelectors, separator }) => {
+        modifySelectors(({ className }) => {
+          return `.dark-wrapper .${e(`custom-dark${separator}${className}`)}`;
+        });
+      });
+    }),
+  ],
 };

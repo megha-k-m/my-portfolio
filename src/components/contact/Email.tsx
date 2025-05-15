@@ -37,8 +37,6 @@ const Email = () => {
           name="message"
           placeholder="Write your message..."
           rows={5}
-          //   value={message}
-          //   onChange={(e) => setMessage(e.target.value)}
           className="w-full rounded-md border py-2 text-sm
                    focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
         />

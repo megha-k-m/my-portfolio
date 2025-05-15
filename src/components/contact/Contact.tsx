@@ -13,15 +13,17 @@ const Contact = () => {
           </p>
         </div>
         <div className="w-full flex flex-col md:flex-row gap-6 md:items-stretch">
-          <div className="flex-1 w-full md:w-1/2 border-pink-500/50 p-4 rounded bg-white/10 backdrop-blur-2xl">
+          <div className="flex-1 w-full md:w-1/2 p-4 rounded-xl bg-white/10 backdrop-blur-md">
+            <div className="absolute inset-0 border border-black-500/50 dark:border-pink-500/50 rounded-xl pointer-events-none" />
             <Email />
           </div>
-          <div className="flex-1 w-full md:w-1/2 border-pink-500/50 p-4 rounded bg-white/10 backdrop-blur-2xl">
+          <div className="flex-1 w-full md:w-1/2 border-black-500/50  p-4 rounded-xl bg-white/10 backdrop-blur-md">
+            <div className="absolute inset-0 border border-black-500/50 dark:border-pink-500/50 rounded-xl pointer-events-none" />
             <div className="mx-auto p-2">
               <div className="font-bold text-blue-600 text-2xl">
                 Contact Information
               </div>
-              <div className="flex items-center gap-2 text-md text-white mt-5">
+              <div className="flex items-center gap-2 text-md mt-5">
                 <div>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +42,7 @@ const Contact = () => {
                   <span> +91 6360411313</span>
                 </span>
               </div>
-              <div className="flex items-center gap-2 text-md text-white mt-5">
+              <div className="flex items-center gap-2 text-md mt-5">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 512 512"
@@ -57,7 +59,7 @@ const Contact = () => {
                   <span> meghakarthikm@gmail.com</span>
                 </span>
               </div>
-              <div className="flex items-center gap-2 text-md text-white mt-5">
+              <div className="flex items-center gap-2 text-md mt-5">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 384 512"

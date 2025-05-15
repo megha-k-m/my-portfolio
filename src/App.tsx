@@ -8,7 +8,7 @@ import './index.css';
 
 const App = () => {
   return (
-    <div className="bg-zinc-900 text-white">
+    <div className="bg-white text-black dark:bg-zinc-900 dark:text-white">
       <Header />
       <About />
       <AboutMe />

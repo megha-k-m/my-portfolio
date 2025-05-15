@@ -16,7 +16,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   technologies = ['React'],
 }) => {
   return (
-    <div className="w-full md:w-1/3 md:flex-row h-full rounded bg-white/10 p-6 mt-10 mr-10 border-pink-500/50 backdrop-blur-md">
+    <div className="w-full md:w-1/3 md:flex-row h-full rounded bg-white/10 p-6 mt-10 mr-10 backdrop-blur-md">
+      <div className="absolute inset-0 border border-black-500/50 dark:border-pink-500/50 rounded-xl pointer-events-none" />
       <div className="flex flex-col h-full">
         {/* Header */}
         <div className="mb-4">

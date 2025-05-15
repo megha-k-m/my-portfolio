@@ -30,7 +30,7 @@ const AboutMe = () => {
             </div>
           </div>
           <div className="w-full md:w-1/2 relative p-4 rounded-xl bg-white/10 backdrop-blur-md overflow-hidden">
-            <div className="absolute inset-0 border border-pink-500/50 rounded-xl pointer-events-none" />
+            <div className="absolute inset-0 border border-black-500/50 dark:border-pink-500/50 rounded-xl pointer-events-none" />
             <div className="relative z-10">
               <div className="flex space-y-6 font-extrabold text-2xl justify-center items-center">
                 Skills

@@ -1,11 +1,41 @@
 import { faConnectdevelop } from '@fortawesome/free-brands-svg-icons/faConnectdevelop';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import profile from '../../assets/profile.jpeg';
+import { MoonIcon, SunIcon } from '@heroicons/react/24/solid';
+
 import React, { useEffect, useState } from 'react';
 
 const Header: React.FC = () => {
   const [showNavBar, setShowNavBar] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
+  const [isDark, setIsDark] = useState(true);
+
+  useEffect(() => {
+    const storedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia(
+      '(prefers-color-scheme: dark)'
+    ).matches;
+
+    if (storedTheme === 'dark' || (!storedTheme && prefersDark)) {
+      document.documentElement.classList.add('dark');
+      setIsDark(true);
+    } else {
+      document.documentElement.classList.remove('dark');
+      setIsDark(false);
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    const root = document.documentElement;
+    if (root.classList.contains('dark')) {
+      root.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+      setIsDark(false);
+    } else {
+      root.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+      setIsDark(true);
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,6 +49,7 @@ const Header: React.FC = () => {
   const handleNavBar = () => {
     setShowNavBar(!showNavBar);
   };
+  console.log(isDark);
   return (
     <header
       className={`shadow-md sticky top-0 z-50 ${isSticky ? `bg-pink-950` : `bg-pink-500/5`}`}
@@ -51,19 +82,28 @@ const Header: React.FC = () => {
             </button>
           </div>
           <div className="container mx-auto px-4 py-4 flex h-16">
-            <nav className="space-x-4 hidden sm:block text-white">
+            <nav className="space-x-4 hidden sm:block">
               <FontAwesomeIcon icon={faConnectdevelop} />
               <span>Megha M</span>
             </nav>
           </div>
           <div className="flex justify-end">
             <div className="container mx-auto px-4 py-4 flex h-16">
-              <nav className="space-x-4 hidden sm:block text-white mx-3">
+              <nav className="space-x-4 hidden sm:block mx-3">
                 <a href="#about">About</a>
                 <a href="#projects">Projects</a>
                 <a href="#contact">Contact</a>
               </nav>
-              <img className="size-8 rounded-full mr-2" src={profile} />
+              <button
+                onClick={toggleTheme}
+                className="p-2 rounded-full bg-gray-200 dark:bg-gray-800"
+              >
+                {isDark ? (
+                  <SunIcon className="h-5 w-5 text-yellow-500" />
+                ) : (
+                  <MoonIcon className="h-5 w-5 text-gray-800" />
+                )}
+              </button>
             </div>
           </div>
         </div>
@@ -71,19 +111,16 @@ const Header: React.FC = () => {
           {showNavBar && (
             <ul className="space-y-1 px-2 pt-2 pb-3">
               <li className="block rounded-md px-3 py-2 font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
-                <a href="/about">About</a>
+                <a href="#about">About</a>
               </li>
               <li className="block rounded-md px-3 py-2 font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
-                <a href="/about">Experience</a>
-              </li>
-              <li className="block rounded-md px-3 py-2 font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
-                <a href="/about">Skills</a>
+                <a href="#about">Skills</a>
               </li>
               <li className="block rounded-md px-3 py-2 font-medium text-gray-300  hover:bg-gray-700 hover:text-white">
-                <a href="/projects">Projects</a>
+                <a href="#projects">Projects</a>
               </li>
               <li className="block rounded-md px-3 py-2 font-medium text-gray-300  hover:bg-gray-700 hover:text-white">
-                <a href="/contact">Contact</a>
+                <a href="#contact">Contact</a>
               </li>
             </ul>
           )}
